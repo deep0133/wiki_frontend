@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://wikicat.netlify.app">
+    <a href="https://wikicatdavchallenges.netlify.app/">
       Demo
     </a>
     <span> | </span>
