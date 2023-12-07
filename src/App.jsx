@@ -1,25 +1,25 @@
-import { useContext, useEffect } from 'react';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import Detail from './pages/Detail';
-import Main from './pages/Main';
-import TopTenBreed from './pages/TopTenBreed';
-import { Routes, Route } from 'react-router-dom';
-import DataContext from './context/DataContext';
+import { useContext, useEffect } from "react";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Detail from "./pages/Detail";
+import Main from "./pages/Main";
+import TopTenBreed from "./pages/TopTenBreed";
+import { Routes, Route } from "react-router-dom";
+import DataContext from "./context/DataContext";
 function App() {
-  const { data, fetchData } = useContext(DataContext);
+  const { fetchData } = useContext(DataContext);
 
   useEffect(() => {
-    if (data.length === 0) fetchData();
-  }, [data.length, fetchData]);
+    fetchData();
+  }, []);
 
   return (
-    <section className="bg-[#FFF] min-h-[100lvh]">
+    <section className='bg-[#FFF] min-h-[100lvh]'>
       <Navbar />
       <Routes>
-        <Route index path="/" element={<Main />} />
-        <Route path="/top10" element={<TopTenBreed />} />
-        <Route path="/detail/:id" element={<Detail />} />
+        <Route index path='/' element={<Main />} />
+        <Route path='/top10' element={<TopTenBreed />} />
+        <Route path='/detail/:id' element={<Detail />} />
       </Routes>
       <Footer />
     </section>

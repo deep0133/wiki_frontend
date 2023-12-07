@@ -5,10 +5,10 @@ import image1 from "../assets/images/image2.png";
 import caticon from "../assets/icons/caticon.svg";
 import crossIcon from "../assets/icons/cross.svg";
 import searchIcon from "../assets/icons/searchIcon.svg";
-
 import { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import DataContext from "../context/DataContext";
+
 function Header() {
   const [dropDown, setDropDown] = useState(false);
   const [heroImages, setHeroImages] = useState([]);
@@ -69,6 +69,10 @@ function Header() {
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
   }, []);
 
   const toggleModal = () => {
